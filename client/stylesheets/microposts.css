@@ -1,1 +1,15 @@
 /* CSS declarations go here */
+
+#profile-picture {
+    width: 100%;
+    padding-bottom: 2em;
+}
+
+.post {
+    margin-top: 3rem;
+    border-bottom: solid gray 0.2em;
+}
+
+.post:last-child {
+    border: 0;
+}
