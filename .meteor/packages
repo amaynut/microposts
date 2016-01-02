@@ -22,4 +22,11 @@ iron:router
 twbs:bootstrap
 accounts-facebook
 accounts-google
-kevbuk:useraccounts-bootstrap
+underscore
+useraccounts:bootstrap
+accounts-ui
+accounts-password
+selaias:accounts-entry
+service-configuration
+cfs:standard-packages
+cfs:gridfs

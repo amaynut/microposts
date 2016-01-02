@@ -1,11 +1,11 @@
 <template name="posts">
     <div class="row">
-
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-            Click to post a message
-        </button>
-
+        {{#if currentUser}}
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postModal">
+                Click to post a message
+            </button>
+        {{/if}}
         <!-- Modal -->
         <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel">
             <div class="modal-dialog" role="document">
@@ -35,49 +35,16 @@
         </div>
     </div>
     <hr>
-    <div class="row post">
-        <div class="col-md-1">
-            <img src="img/photo.png" alt="Profile picture" id="profile-picture">
+    {{#each profiles}}
+        <div class="row post">
+            <div class="col-md-1">
+                <img src="{{profile_image}}" alt="Profile picture" id="profile-picture">
+            </div>
+            <div class="col-md-11">
+                <p>Posted by Said GUERRAB on December 30, 2015</p>
+                <p>This is the user post</p>
+            </div>
         </div>
-        <div class="col-md-11">
-            <p>Posted by Said GUERRAB on December 30, 2015</p>
-            <p>This is the user post</p>
-        </div>
-    </div>
-    <div class="row post">
-        <div class="col-md-1">
-            <img src="img/photo.png" alt="Profile picture" id="profile-picture">
-        </div>
-        <div class="col-md-11">
-            <p>Posted by Said GUERRAB on December 30, 2015</p>
-            <p>This is the user post</p>
-        </div>
-    </div>
-    <div class="row post">
-        <div class="col-md-1">
-            <img src="img/photo.png" alt="Profile picture" id="profile-picture">
-        </div>
-        <div class="col-md-11">
-            <p>Posted by Said GUERRAB on December 30, 2015</p>
-            <p>This is the user post</p>
-        </div>
-    </div>
-    <div class="row post">
-        <div class="col-md-1">
-            <img src="img/photo.png" alt="Profile picture" id="profile-picture">
-        </div>
-        <div class="col-md-11">
-            <p>Posted by Said GUERRAB on December 30, 2015</p>
-            <p>This is the user post</p>
-        </div>
-    </div>
-    <div class="row post">
-        <div class="col-md-1">
-            <img src="img/photo.png" alt="Profile picture" id="profile-picture">
-        </div>
-        <div class="col-md-11">
-            <p>Posted by Said GUERRAB on December 30, 2015</p>
-            <p>This is the user post</p>
-        </div>
-    </div>
+    {{/each}}
+
 </template>
