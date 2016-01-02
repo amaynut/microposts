@@ -9,3 +9,7 @@ Meteor.startup(function () {
         waitEmailVerification: false,   // will not allow users to login until their email is verified.
     });
 });
+
+Meteor.publish('posts', function(){
+    return posts.find();
+});

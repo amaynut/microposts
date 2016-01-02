@@ -1,10 +1,13 @@
-if(Meteor.isClient){
+if (Meteor.isClient) {
     Template.posts.helpers({
-        profile_image: function(){
-           return 'img/photo.png'
-        },
-        profiles: function(){
-            return _.range(10)
+        posts: function () {
+            return posts.find({}, {sort: {createdAt: -1}});
         }
     });
+    Template.posts.events({
+        "submit #postForm": function(){
+            $('#postModal').modal('hide');
+        }
+    });
+    Meteor.subscribe('posts')
 }

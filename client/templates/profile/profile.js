@@ -10,7 +10,6 @@ Template.profile.events({
                 if(err){
                     throw new Meteor.Error(err);
                 }else{
-                    console.log(result)
                     var imageLoc = 'cfs/files/ProfileImages/'+ result._id;
 
                     UserImages.insert({
@@ -23,7 +22,6 @@ Template.profile.events({
                 }
             });
         }
-        console.log(imageFile);
         return false;
     }
 });

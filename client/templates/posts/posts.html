@@ -17,34 +17,31 @@
                     </div>
                     <div class="modal-body">
 
-                        <form action="">
-                            <div class="form-group">
-                                <div class="form-control">
-                                    <input type="text">
-                                </div>
-                            </div>
-                        </form>
+                        {{#autoForm collection="posts" id="postForm" type="insert"}}
+                            {{> afQuickField name="body" rows=4}}
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        {{/autoForm}}
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <hr>
-    {{#each profiles}}
+    {{#each posts}}
         <div class="row post">
             <div class="col-md-1">
-                <img src="{{profile_image}}" alt="Profile picture" id="profile-picture">
+                <img src="{{getProfileImage userId}}" alt="Profile picture" id="profile-picture">
             </div>
             <div class="col-md-11">
-                <p>Posted by Said GUERRAB on December 30, 2015</p>
-                <p>This is the user post</p>
+                <p>Posted by {{username}} on {{createdAt}}</p>
+                <p>{{body}}</p>
             </div>
+
         </div>
+    {{else}}
+        <p>No post to show</p>
     {{/each}}
 
 </template>
