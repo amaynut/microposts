@@ -10,6 +10,16 @@ Meteor.startup(function () {
     });
 });
 
+// publish the posts
 Meteor.publish('posts', function(){
-    return posts.find();
+    return posts.find({}, {sort:{createdAt:-1}});
+});
+
+// publish the user profile images
+Meteor.publish('ProfileImages', function () {
+    return ProfileImages.find();
+});
+
+Meteor.publish('UserImages', function () {
+    return UserImages.find();
 });

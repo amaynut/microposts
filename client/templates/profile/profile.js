@@ -25,3 +25,6 @@ Template.profile.events({
         return false;
     }
 });
+Meteor.subscribe('ProfileImages');
+
+Meteor.subscribe('UserImages');
